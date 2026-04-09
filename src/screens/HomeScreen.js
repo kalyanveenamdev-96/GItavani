@@ -13,7 +13,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import MoodSelector from '../components/MoodSelector';
 import LoadingAnimation from '../components/LoadingAnimation';
-import { getGitaQuote } from '../services/geminiService';
+import { getGitaQuote } from '../services/aiService';
 import { COLORS, SPACING, FONT_SIZES, BORDER_RADIUS } from '../styles/theme';
 import { APP_NAME, APP_TAGLINE } from '../utils/constants';
 

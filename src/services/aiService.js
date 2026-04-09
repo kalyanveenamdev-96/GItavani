@@ -29,22 +29,19 @@ Rules:
 let API_KEY = 'AIzaSyCNCfR0KIbMvDcIK2v5nqxdsNZQgYLYYAk';
 
 export const setApiKey = (key) => {
-    // Keeping this for potential future use (e.g. if user wants to change it)
     API_KEY = key;
 };
-
-export const getApiKey = () => API_KEY;
 
 export const getGitaQuote = async (mood) => {
     if (!API_KEY) {
         return {
             success: false,
-            error: 'API key not set. Please add your Gemini API key in Settings.',
+            error: 'API key not set.',
         };
     }
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000);
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
 
     try {
         const response = await fetch(`${GEMINI_URL}?key=${API_KEY}`, {
@@ -71,9 +68,6 @@ export const getGitaQuote = async (mood) => {
                     error: 'Too many requests. The Free Tier of Gemini has a limit of 15 requests per minute. Please try again in 30 seconds.'
                 };
             }
-            if (response.status === 401 || response.status === 403) {
-                return { success: false, error: 'Invalid API key. Please check your Gemini API key.' };
-            }
             const errorBody = await response.text();
             throw new Error(`API Error ${response.status}: ${errorBody}`);
         }
@@ -99,11 +93,8 @@ export const getGitaQuote = async (mood) => {
     } catch (error) {
         clearTimeout(timeoutId);
         if (error.name === 'AbortError') {
-            return { success: false, error: 'Request timed out. Please check your connection and try again.' };
+            return { success: false, error: 'Request timed out. Please try again.' };
         }
-        if (error.message?.includes('JSON')) {
-            return { success: false, error: 'Failed to parse response. Please try again.' };
-        }
-        return { success: false, error: error.message || 'Something went wrong. Please try again.' };
+        return { success: false, error: error.message || 'Something went wrong.' };
     }
 };
