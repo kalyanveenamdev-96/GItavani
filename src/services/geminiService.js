@@ -66,7 +66,10 @@ export const getGitaQuote = async (mood) => {
 
         if (!response.ok) {
             if (response.status === 429) {
-                return { success: false, error: 'Too many requests. Please wait a moment and try again.' };
+                return {
+                    success: false,
+                    error: 'Too many requests. The Free Tier of Gemini has a limit of 15 requests per minute. Please try again in 30 seconds.'
+                };
             }
             if (response.status === 401 || response.status === 403) {
                 return { success: false, error: 'Invalid API key. Please check your Gemini API key.' };

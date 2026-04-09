@@ -21,6 +21,7 @@ const HomeScreen = ({ navigation }) => {
     const [moodText, setMoodText] = useState('');
     const [selectedMood, setSelectedMood] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [lastRequestTime, setLastRequestTime] = useState(0);
 
     const handleMoodSelect = (mood) => {
         if (selectedMood?.id === mood.id) {
@@ -39,14 +40,28 @@ const HomeScreen = ({ navigation }) => {
             return;
         }
 
+        const now = Date.now();
+        if (now - lastRequestTime < 10000) {
+            Alert.alert('Patience, seeker', 'Please wait a few moments before asking for more wisdom. 🙏');
+            return;
+        }
+
         setIsLoading(true);
         const result = await getGitaQuote(mood);
         setIsLoading(false);
 
         if (result.success) {
+            setLastRequestTime(Date.now());
             navigation.navigate('Quote', { quote: result.data, mood });
         } else {
-            Alert.alert('Oops!', result.error);
+            if (result.error.includes('Too many requests')) {
+                Alert.alert(
+                    'Patience is a Virtue',
+                    'Too many requests. The Free Tier of Gemini has a limit of 15 requests per minute. Please try again in 30 seconds.'
+                );
+            } else {
+                Alert.alert('Oops!', result.error);
+            }
         }
     };
 
