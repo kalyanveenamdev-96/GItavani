@@ -1,6 +1,6 @@
-# GitaVani — Play Store Deployment Guide
+# GitaGuide — Play Store Deployment Guide
 
-> Complete guide to publishing GitaVani on the Google Play Store using Expo EAS
+> Complete guide to publishing GitaGuide on the Google Play Store using Expo EAS
 
 ---
 
@@ -31,13 +31,13 @@ The app is built with **React Native + Expo**, which produces a standard Android
 ```json
 {
   "expo": {
-    "name": "GitaVani",
-    "slug": "GitaVani",
+    "name": "GitaGuide",
+    "slug": "GitaGuide",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "android": {
-      "package": "com.kalyan.gitavani",
+      "package": "com.kalyan.gitaguide",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
@@ -106,7 +106,7 @@ This generates a `.aab` file (Android App Bundle) — the format Google Play req
 1. Go to [Google Play Console](https://play.google.com/console)
 2. Click **"Create app"**
 3. Fill in:
-   - **App name**: GitaVani — Bhagavad Gita Wisdom
+   - **App name**: GitaGuide — Bhagavad Gita Wisdom
    - **Default language**: English (United States)
    - **App or Game**: App
    - **Free or Paid**: Free
@@ -123,11 +123,11 @@ This generates a `.aab` file (Android App Bundle) — the format Google Play req
 #### Full Description (suggested)
 
 ```
-🙏 GitaVani — Your Personal Bhagavad Gita Companion
+🙏 GitaGuide — Your Personal Bhagavad Gita Companion
 
 Feeling stressed? Confused? Anxious? Or simply seeking wisdom?
 
-GitaVani uses AI to find the perfect Bhagavad Gita verse for your 
+GitaGuide uses AI to find the perfect Bhagavad Gita verse for your 
 current emotional state. Simply tell the app how you're feeling, 
 and receive a relevant Sanskrit shloka with its translation and a 
 personalized explanation.
@@ -169,11 +169,11 @@ Built with love for seekers of wisdom. 🙏
 Create a simple privacy policy (can host as a GitHub repo page):
 
 ```markdown
-# GitaVani Privacy Policy
+# GitaGuide Privacy Policy
 
 Last updated: April 2026
 
-GitaVani does not collect, store, or share any personal information.
+GitaGuide does not collect, store, or share any personal information.
 
 - No account or login required
 - No analytics or tracking
@@ -184,13 +184,13 @@ GitaVani does not collect, store, or share any personal information.
 Contact: your.email@example.com
 ```
 
-Host it at: `https://yourusername.github.io/gitavani-privacy/`
+Host it at: `https://yourusername.github.io/gitaguide-privacy/`
 
 ### Step 7: Upload & Review
 
 1. Go to **Production → Releases → Create new release**
 2. Upload the `.aab` file from Step 1
-3. Add release notes: *"Initial release of GitaVani"*
+3. Add release notes: *"Initial release of GitaGuide"*
 4. Submit for review
 
 ### Step 8: Review Timeline

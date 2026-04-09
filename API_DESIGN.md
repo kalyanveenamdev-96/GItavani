@@ -1,4 +1,4 @@
-# GitaVani — Gemini API Integration Reference
+# GitaGuide — Gemini API Integration Reference
 
 ## API Overview
 

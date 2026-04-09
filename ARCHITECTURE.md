@@ -1,4 +1,4 @@
-# GitaVani — Architecture Document
+# GitaGuide — Architecture Document
 
 ## System Architecture
 

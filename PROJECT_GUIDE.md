@@ -1,4 +1,4 @@
-# GitaVani — Bhagavad Gita Quote App
+# GitaGuide — Bhagavad Gita Quote App
 
 > A mood-based Bhagavad Gita wisdom app powered by Google Gemini AI
 
@@ -6,13 +6,13 @@
 
 ## 📋 Overview
 
-**GitaVani** is a React Native (Expo) mobile app that delivers personalized Bhagavad Gita quotes based on the user's current emotional state. Users can type their mood freely or pick from preset mood options. The app sends this mood context to the **Google Gemini API**, which returns a relevant Gita shloka (Sanskrit verse), its English translation, and a brief explanation of how it relates to the user's mood.
+**GitaGuide** is a React Native (Expo) mobile app that delivers personalized Bhagavad Gita quotes based on the user's current emotional state. Users can type their mood freely or pick from preset mood options. The app sends this mood context to the **Google Gemini API**, which returns a relevant Gita shloka (Sanskrit verse), its English translation, and a brief explanation of how it relates to the user's mood.
 
 ---
 
 ## 🎯 Problem Statement
 
-People often seek spiritual guidance during different emotional phases of life — stress, confusion, sadness, or even joy. The Bhagavad Gita contains timeless wisdom for every human emotion, but finding the right verse at the right time is hard. **GitaVani** bridges this gap by using AI to match your mood to the most relevant Gita teaching.
+People often seek spiritual guidance during different emotional phases of life — stress, confusion, sadness, or even joy. The Bhagavad Gita contains timeless wisdom for every human emotion, but finding the right verse at the right time is hard. **GitaGuide** bridges this gap by using AI to match your mood to the most relevant Gita teaching.
 
 ---
 
@@ -88,7 +88,7 @@ People often seek spiritual guidance during different emotional phases of life �
 ## 📱 Screen Breakdown
 
 ### 1. Home Screen
-- **Header**: App name "GitaVani" with a subtle Om/lotus icon
+- **Header**: App name "GitaGuide" with a subtle Om/lotus icon
 - **Mood Input Section**:
   - Text field with placeholder: *"How are you feeling today?"*
   - Below it: horizontally scrollable mood chips
@@ -193,7 +193,7 @@ const quote = JSON.parse(text);
 ## 📁 Project Structure
 
 ```
-GitaVani/
+GITA/
 ├── App.js                          # Entry point, navigation setup
 ├── app.json                        # Expo config
 ├── package.json                    # Dependencies
@@ -300,7 +300,7 @@ GitaVani/
 
 ```bash
 # 1. Navigate to the project
-cd /Users/kalyanchakravarthi/Desktop/GitaVani
+cd /Users/kalyanchakravarthi/Desktop/GITA
 
 # 2. Initialize Expo project
 npx -y create-expo-app@latest ./
